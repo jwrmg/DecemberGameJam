@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using TMPro;
 
 public class CounterText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float Speed;
+    public TextMeshProUGUI TextObject;
+
+    public float Current;
+
+    public void Update()
     {
-        
+        Current = Mathf.Lerp(Current, Player.Instance.Score * 100, Speed * Time.fixedDeltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnGUI()
     {
-        
+        TextObject.text = Current.ToString("0000000");
     }
+
+
 }
