@@ -747,25 +747,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3895477675968196580, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.4259402
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895477675968196580, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
-      propertyPath: m_Size.y
-      value: 0.7718203
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895477675968196582, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895477675968196583, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
-      propertyPath: MaxSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3895477675968196583, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
-      propertyPath: Damping
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
