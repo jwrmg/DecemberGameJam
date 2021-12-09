@@ -1,8 +1,15 @@
-﻿public class Coal : Collectable
+﻿using UnityEngine;
+
+public class Coal : Collectable
 {
+    public int LivesLost = 1;
+
     public override void Handler(Player player)
     {
-        player.Health--;
-        Destroy(this.gameObject);
+        player.Health -= LivesLost;
+
+        this.GetComponent<SpriteRenderer>().enabled = false;
+
+        Destroy(this.gameObject, ClipToPlay.length);
     }
 }
