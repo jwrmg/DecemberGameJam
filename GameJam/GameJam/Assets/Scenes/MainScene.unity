@@ -896,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71fc94a050de14593d26375671b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoNotDestroyOnLoad: 1
   MusicText: {fileID: 0}
   MusicTracks:
   - {fileID: 8300000, guid: 5846dbcd322d90a45a24354ef66c5d73, type: 3}
@@ -1578,6 +1579,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.7718203
       objectReference: {fileID: 0}
+    - target: {fileID: 3895477675968196581, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
+      propertyPath: DestroyOnLoad
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895477675968196581, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
+      propertyPath: DoNotDestroyOnLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3895477675968196582, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
       propertyPath: m_Constraints
       value: 6
@@ -1636,6 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacaf75cd948b3e4d8d877ef09ba3b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoNotDestroyOnLoad: 1
 --- !u!82 &1698539212
 AudioSource:
   m_ObjectHideFlags: 0

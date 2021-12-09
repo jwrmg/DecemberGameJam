@@ -10,6 +10,8 @@ using UnityEngine;
 /// <typeparam name="T"></typeparam>
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
+    public bool DoNotDestroyOnLoad = true;
+
     private static T m_Instance;
 
     public static T Instance
@@ -41,7 +43,8 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (m_Instance == null)
         {
             m_Instance = this as T;
-            DontDestroyOnLoad(gameObject);
+            if (DoNotDestroyOnLoad)
+                DontDestroyOnLoad(gameObject);
         }
         else
         {

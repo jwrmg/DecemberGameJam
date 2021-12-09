@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
-public class MusicManager : MonoBehaviour
+public class MusicManager : Singleton<MusicManager>
 {
     [SerializeField] public TextMeshProUGUI MusicText;
     [SerializeField] public AudioClip[] MusicTracks;
@@ -25,8 +25,9 @@ public class MusicManager : MonoBehaviour
     /// <summary>
     /// Initializes all the events.
     /// </summary>
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         if (!m_AudioSource)
             m_AudioSource = this.GetComponent<AudioSource>();
 

@@ -47,8 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RigidBody2D: {fileID: 0}
-  AudioSource: {fileID: 0}
-  ClipToPlay: {fileID: 8300000, guid: ad3f7791c9cd24343adb9fe9ddd65ada, type: 3}
+  ClipToPlay: {fileID: 8300000, guid: cf35e2f623f236d47989d649a9fdac74, type: 3}
   LivesLost: 1
 --- !u!61 &6581480588776012137
 BoxCollider2D:
