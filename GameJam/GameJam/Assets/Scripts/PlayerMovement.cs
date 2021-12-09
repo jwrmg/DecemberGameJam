@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 Bounds;
 
+    public Animator PlayerAnimator;
+
     private float m_MovementDirection;
 
     private Rigidbody2D m_RigidBody;
@@ -31,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     public void Movement()
     {
         float inputAxis = Input.GetAxisRaw("Horizontal");
+
+        PlayerAnimator.SetBool("Moving", inputAxis != 0);
 
         m_MovementDirection = Mathf.Lerp(m_MovementDirection, inputAxis, Time.fixedDeltaTime * Damping);
 
