@@ -18,7 +18,7 @@ public class CounterText : MonoBehaviour
 
     private void OnGUI()
     {
-        TextObject.text = Current.ToString("0000000");
+        TextObject.text = "Score: " + Current.ToString("0000000");
     }
 
 
