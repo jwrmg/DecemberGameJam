@@ -5857,9 +5857,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1590861216326195097, guid: 3a4239ac2bce9b944aa88ced77da5290, type: 3}
+      propertyPath: Toys.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590861216326195097, guid: 3a4239ac2bce9b944aa88ced77da5290, type: 3}
       propertyPath: ScoreThreshold
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1590861216326195097, guid: 3a4239ac2bce9b944aa88ced77da5290, type: 3}
+      propertyPath: Toys.Array.data[9]
+      value: 
+      objectReference: {fileID: 1880829101588151316, guid: 2bbd5fb9c2315934b9dc3b1ca5cc314f, type: 3}
+    - target: {fileID: 1590861216326195097, guid: 3a4239ac2bce9b944aa88ced77da5290, type: 3}
+      propertyPath: Toys.Array.data[10]
+      value: 
+      objectReference: {fileID: 1880829101588151316, guid: f5acd9fca950feb44b2aa4b198943be0, type: 3}
+    - target: {fileID: 1590861216326195097, guid: 3a4239ac2bce9b944aa88ced77da5290, type: 3}
+      propertyPath: Toys.Array.data[11]
+      value: 
+      objectReference: {fileID: 1880829101588151316, guid: 846d4b00ec53a83458b29093bd6172f5, type: 3}
     - target: {fileID: 1590861216326195098, guid: 3a4239ac2bce9b944aa88ced77da5290, type: 3}
       propertyPath: m_Name
       value: Spawner
