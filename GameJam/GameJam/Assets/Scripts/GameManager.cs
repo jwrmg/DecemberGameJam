@@ -56,10 +56,22 @@ public class GameManager : Singleton<GameManager>
         State = GameStates.End;
         Player.Instance.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
         Player.Instance.GetComponent<Rigidbody2D>().AddTorque(1000, ForceMode2D.Impulse);
-        Player.Instance.GetComponent<DoScale>().Run(new Vector3(0,0,0), 2.5f, () =>
+        Player.Instance.GetComponent<DoScale>().Run(new Vector3(0, 0, 0), 2.5f, () =>
+          {
+              GameOverMenu.Instance.Show();
+          });
+
+        if (PlayerPrefs.HasKey("Highscore"))
         {
-            GameOverMenu.Instance.Show();
-        });
+            var value = PlayerPrefs.GetInt("Highscore");
+
+            if (Player.Instance.Score > value)
+                PlayerPrefs.SetInt("Highscore", Player.Instance.Score);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Highscore", Player.Instance.Score);
+        }
     }
 
     public void StartGame()
