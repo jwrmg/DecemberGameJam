@@ -2,10 +2,17 @@
 
 public class Player : Singleton<Player>
 {
-    public int Lives;
+    public int StartingLives;
+    public int MaxLives;
+    internal int Lives;
     public int Score;
 
     public Dictionary<string, PowerUp> PowerUps = new Dictionary<string, PowerUp>();
+
+    public void Start()
+    {
+        HealthHandler.Instance.AddHealth(StartingLives);
+    }
 
     public void Update()
     {

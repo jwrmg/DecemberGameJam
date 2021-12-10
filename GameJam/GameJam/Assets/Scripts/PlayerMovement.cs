@@ -46,5 +46,9 @@ public class PlayerMovement : MonoBehaviour
         transform.position = (Vector3)position;
     }
 
-    public void Update() => Movement();
+    public void Update()
+    {
+        if (GameManager.Instance.State == GameStates.Playing)
+            Movement();
+    }
 }

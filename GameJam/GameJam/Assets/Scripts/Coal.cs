@@ -4,6 +4,6 @@
 
     public override void Handler(Player player)
     {
-        player.Lives -= LivesLost;
+        HealthHandler.Instance.RemoveHealth(LivesLost);
     }
 }

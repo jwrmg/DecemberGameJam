@@ -20,7 +20,7 @@ public class PresentSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (ShouldSpawn)
+        if (ShouldSpawn && GameManager.Instance.State == GameStates.Playing)
         {
             float time = UnityEngine.Random.Range(0, SpawnTimeRange);
 

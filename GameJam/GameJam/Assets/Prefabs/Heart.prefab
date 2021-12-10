@@ -147,3 +147,4 @@ MonoBehaviour:
   RigidBody2D: {fileID: 0}
   ClipToPlay: {fileID: 8300000, guid: e0b4e04b0c4bdcb42a503b8907cd634e, type: 3}
   LivesToAdd: 1
+  ScoreToAddIfMaxLives: 1
