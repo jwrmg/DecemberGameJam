@@ -10,13 +10,17 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.1f, 10.0f)]
     public float Damping;
 
-    public Vector2 Bounds;
+    public SpriteRenderer Renderer;
 
     public Animator PlayerAnimator;
 
     private float m_MovementDirection;
 
     private Rigidbody2D m_RigidBody;
+
+    private Vector2 m_ScreenBounds;
+    private float m_ObjectWidth;
+    private float m_ObjectHeight;
 
     private void Awake()
     {
@@ -41,14 +45,27 @@ public class PlayerMovement : MonoBehaviour
         m_MovementDirection = (float)Math.Round(m_MovementDirection, 5);
 
         Move(m_MovementDirection);
-
-        Vector2 position = new Vector2 { x = Mathf.Clamp(transform.position.x, Bounds.x, Bounds.y), y = transform.position.y };
-        transform.position = (Vector3)position;
     }
 
     public void Update()
     {
         if (GameManager.Instance.State == GameStates.Playing)
             Movement();
+    }
+
+    // Use this for initialization
+    private void Start()
+    {
+        m_ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        m_ObjectWidth = Renderer.bounds.extents.x; //extents = size of width / 2
+        m_ObjectHeight = Renderer.bounds.extents.y; //extents = size of height / 2
+    }
+
+    // Update is called once per frame
+    private void LateUpdate()
+    {
+        Vector3 viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, m_ScreenBounds.x * -1 + m_ObjectWidth, m_ScreenBounds.x - m_ObjectWidth);
+        transform.position = viewPos;
     }
 }

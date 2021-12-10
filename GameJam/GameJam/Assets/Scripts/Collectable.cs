@@ -17,7 +17,7 @@ public abstract class Collectable : MonoBehaviour
     {
         RigidBody2D = this.GetComponent<Rigidbody2D>();
 
-        RigidBody2D.AddTorque(UnityEngine.Random.Range(-1000, 1000), ForceMode2D.Impulse);
+        RigidBody2D.AddTorque(UnityEngine.Random.Range(-100, 100), ForceMode2D.Impulse);
     }
 
     private void OnBecameInvisible()

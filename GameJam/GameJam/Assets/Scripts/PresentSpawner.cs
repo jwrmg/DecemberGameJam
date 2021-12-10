@@ -12,6 +12,8 @@ public class PresentSpawner : MonoBehaviour
     public float SpawnTimeRange = 10;
     public float ScoreThreshold;
 
+    public float AppliedGravity = 1.0f;
+
     public bool ShouldSpawn = true;
 
     public float SpawnDistance;
@@ -52,7 +54,9 @@ public class PresentSpawner : MonoBehaviour
         convertedLocation.z = 0;
         convertedLocation.y = SpawnHeight;
 
-        Instantiate(obj, convertedLocation, Quaternion.identity);
+        GameObject instantiatedObject = Instantiate(obj, convertedLocation, Quaternion.identity);
+
+        instantiatedObject.GetComponent<Rigidbody2D>().gravityScale = AppliedGravity;
 
         ShouldSpawn = true;
     }
