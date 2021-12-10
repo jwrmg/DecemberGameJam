@@ -5932,11 +5932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895477675968196581, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
       propertyPath: StartingLives
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3895477675968196581, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
       propertyPath: MaxLives
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3895477675968196583, guid: 5b4feaeb8f2ac8d43ab6dc37b6dfe439, type: 3}
       propertyPath: MaxSpeed
