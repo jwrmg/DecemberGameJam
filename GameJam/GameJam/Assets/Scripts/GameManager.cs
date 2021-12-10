@@ -1,4 +1,5 @@
-﻿using UnityEngine.Events;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 public enum GameStates
 {
@@ -9,7 +10,9 @@ public enum GameStates
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameStates State = GameStates.Playing;
+    public GameStates State = GameStates.Start;
+
+    public DoScale TutorialScreen;
 
     public UnityEvent OnGameStart;
     public UnityEvent OnLivesAdd;
@@ -26,24 +29,42 @@ public class GameManager : Singleton<GameManager>
         if (OnObjectSpawned == null)
             OnObjectSpawned = new UnityEvent();
 
-        OnGameStart?.Invoke();
-
         AddListeners();
+
+        TutorialScreen.Run();
     }
 
     public void AddListeners()
     {
-        OnLivesAdd?.AddListener(VerifyLives);
+        OnLivesAdd?.AddListener(() => VerifyLives());
+        OnGameEnd?.AddListener(EndGame);
     }
 
-    public void VerifyLives()
+    public bool VerifyLives()
     {
         if (Player.Instance.Lives <= 0)
+        {
             OnGameEnd?.Invoke();
+            return true;
+        }
+
+        return false;
     }
 
     public void EndGame()
     {
         State = GameStates.End;
+        Player.Instance.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        Player.Instance.GetComponent<Rigidbody2D>().AddTorque(1000, ForceMode2D.Impulse);
+        Player.Instance.GetComponent<DoScale>().Run(new Vector3(0,0,0), 2.5f, () =>
+        {
+            GameOverMenu.Instance.Show();
+        });
+    }
+
+    public void StartGame()
+    {
+        OnGameStart?.Invoke();
+        State = GameStates.Playing;
     }
 }

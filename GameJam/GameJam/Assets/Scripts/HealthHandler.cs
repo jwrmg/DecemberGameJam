@@ -33,9 +33,16 @@ public class HealthHandler : Singleton<HealthHandler>
             if (HealthIcons.Count > 0)
             {
                 GameObject obj = HealthIcons.Pop();
-                Destroy(obj);
+
+                obj.GetComponent<DoScale>().Run(new Vector3(0, 0, 0), 0.1f, () => Destroy(obj));
+
                 if (Player.Instance.Lives > 0)
                     Player.Instance.Lives--;
+
+                if (GameManager.Instance.VerifyLives())
+                {
+                    break;
+                }
             }
         }
     }
